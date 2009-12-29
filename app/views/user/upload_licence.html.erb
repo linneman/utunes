@@ -1,0 +1,33 @@
+<%if params[:info] %>
+	<div class="utunesNotice">
+		<%= params[:info] %>
+	</div>
+<% end %>
+
+
+
+<div class="utunes-form">
+
+
+
+<% form_for :user, :html => { :multipart => true } do |f| %>
+  <%= f.error_messages %>
+
+  <fieldset>
+  <legend>Upload your uconnect.ver file</legend>
+
+  <img src=<%= url_for :controller=>"images/usb.png" %> border="0" height="100px" ALIGN=RIGHT />
+
+  <div>
+	<%= f.label('Version File') %>:
+	<%= f.file_field("upload_licence_file")%>
+  </div>
+
+  <div>
+    <%= f.submit "Upload", :class => "submit" %>
+  </div>
+
+  </fieldset>
+<% end %>
+
+</div>

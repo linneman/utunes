@@ -1,0 +1,39 @@
+<ul>
+	<p><li><a href=<%= url_for :controller=>:about %> class= "<%=(controller.controller_name == 'about' ? 'active' : '') %>" >About</a></li></p> 
+	
+	<p><li><a href=<%= url_for :controller=>:help %> class= "<%=(controller.controller_name == 'help' ? 'active' : '') %>">How does it work?</a></li></p>
+
+
+<% if @user %> 
+	<p><li><a href=<%= url_for :controller=>:user, :action=>:upload_licence %> class= "<%=(controller.controller_name == "user" && controller.action_name == "upload_licence"  ? 'active' : '') %>">Upload version file</a></li></p>
+<% end %>
+	
+	
+	<p><li><a href=<%= url_for :controller=>:bundles %>  class= "<%=(controller.controller_name == 'bundles' ? 'active' : '') %>">Download Bundles</a></li></p>
+	
+	<p><li><a href=<%= url_for :controller=>:bundle_sources, :action=>@menu_action_bundle_sources %>  class= "<%=(controller.controller_name == 'bundle_sources' ? 'active' : '') %>">Create Bundles</a></li></p>
+	
+	<% if controller.controller_name == 'audio_sources' %>
+	<p><li><a href=<%= url_for :controller=>:audio_sources, :action=>:index %>  class= "active"> &nbsp &nbsp &nbsp Audio Files</a></li></p>
+	<% end %>
+	
+	<p><li><a href=<%= url_for :controller=>:imprint %> class= "<%=(controller.controller_name == 'imprint' ? 'active' : '') %>">Imprint</a></li></p>					
+	
+	
+	
+<% if controller.team_member_authorized? %>
+<hr>
+	<p><li><a href=<%= url_for :controller=>:hc12_sources %> class= "<%=(controller.controller_name == 'hc12_sources' ? 'active' : '') %>" >HC12 SW-Update</a></li></p> 
+<% end %>
+
+	
+
+<% if controller.admin_authorized? %>
+<hr>
+	<p><li><a href=<%= url_for :controller=>:users %> class= "<%=(controller.controller_name == 'users' ? 'active' : '') %>" >Userlist</a></li></p> 
+	<p><li><a href=<%= url_for :controller=>:user, :action=>:change_user %> class= "<%=(controller.controller_name == "user" && controller.action_name == "change_user"  ? 'active' : '') %>">Change User</a></li></p>
+	<p><li><a href=<%= url_for :controller=>:order_items %> class= "<%=(controller.controller_name == 'order_items' ? 'active' : '') %>" >Order Items</a></li></p> 
+
+<% end %>
+
+</ul>

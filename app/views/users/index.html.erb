@@ -1,0 +1,32 @@
+
+<h1>Listing of all users</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>email</th>
+    <th>confirmed</th>
+	<th>level</th>
+  </tr>
+
+<% for user in @users %>
+  <tr>
+    <td><%=h user.name %></td>
+    <td><%=h user.email %></td>
+    <td><%=h user.confirmed %></td>
+	<td><%=h case when user.level == 0 then "User" when user.level == 1 then "Team" when user.level == 2 then "Admin" end %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+	<td><%= link_to 'Change to', { :controller=>'user', :action=>'change_user', :params=>{ :name=> user.name } }, { :method =>:post }   %></td>
+  </tr>
+<% end %>
+</table>
+
+<hr/>
+<%= will_paginate @users %>
+<hr/>
+
+<br />
+
+<%= link_to 'New user', new_user_path %>

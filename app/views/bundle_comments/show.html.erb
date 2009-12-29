@@ -1,0 +1,18 @@
+<p>
+  <b>User:</b>
+  <%=h User.find_by_id( @bundle_comment.user_id ).name %>
+</p>
+
+<p>
+  <b>Bundle:</b>
+  <%=h Bundle.find_by_id( @bundle_comment.bundle_id ).title %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%=h @bundle_comment.comment %>
+</p>
+
+
+<%= link_to 'Edit', edit_bundle_bundle_comment_path(@bundle, @bundle_comment) %> |
+<%= link_to 'Back', bundle_path(@bundle) %>

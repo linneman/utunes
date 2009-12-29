@@ -1,0 +1,22 @@
+<h2>List of HC12 CAN Software Versions</h2>
+
+<table>
+  <tr>
+	<th>SW Version</th>
+    <th>Created By</th>
+  </tr>
+
+<% for hc12_source in @hc12_sources %>
+  <tr>
+    <td><%=h hc12_source.version %></td>
+    <td><%=h User.find_by_id(hc12_source.user_id).name %></td>
+	<td><%= link_to 'Show', :controller=>"bundles", :action=>"show", :id=>hc12_source.bundle_id %></td>
+    <td><%= link_to 'Edit', edit_hc12_source_path(hc12_source) %></td>
+    <td><%= link_to 'Destroy', hc12_source, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Create new update archive', new_hc12_source_path %>

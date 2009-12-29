@@ -1,0 +1,19 @@
+<% unless controller.controller_name == 'user' && controller.action_name == 'register' %>
+
+	<% if @user %>
+
+	<a href=<%= url_for :controller=>:user, :action=>:logout %> class="<%=(controller.controller_name == 'user' ? 'active' : '') %>"> <img src=<%= url_for :controller=>"images/app_personal.png" %> height=24px width=24px border="0" align=center </>  
+	<span style="vertical-align:middle;" > <%= @logged_in_user.name %> / Logout </span>
+	</a>
+
+	<% else %>
+
+	<a href=<%= url_for :controller=>:user, :action=>:login %> class="<%=(controller.controller_name == 'user' ? 'active' : '') %>"> <img src=<%= url_for :controller=>"images/keys.png" %> height=24px width=24px border="0" align=center </>  
+	<span style="vertical-align:middle;" >Login / Create Account </span>
+	</a>
+
+
+	<% end %>
+
+<% end %>
+

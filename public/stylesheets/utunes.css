@@ -1,0 +1,294 @@
+/* <!-- */
+/* General styles */
+body {
+	margin:0 0em 0em 0;
+	padding:0;
+	border:0;			/* This removes the border around the viewport in old versions of IE */
+	width:100%;
+	background:#fff;
+	min-width:600px;    	/* Minimum width of layout - remove line if not required */
+					/* The min-width property does not work in old versions of Internet Explorer */
+	font-size:90%;
+}
+
+a {
+	color:#369;
+}
+
+a:hover {
+	color:#f00;
+	background:#fff;
+	text-decoration:none;
+}
+	
+a.active {
+	color:#00F;
+	text-decoration:none;
+}
+
+h1, h2, h3 {
+	margin:.8em 0 .2em 0em 1em;
+	padding:0;
+}
+
+
+p {
+	margin:.4em 0 .8em 0;
+	padding:0;
+}
+
+h1 { font-size: 18px; }
+h2 { font-size: 16px; }
+h3 { font-size: 14px; }
+
+
+img {
+	margin:10px 0 5px;
+}
+
+
+/* Header styles */
+#header {
+	clear:both;
+	float:right;
+	width:100%;
+	background: url(../images/utunes_banner_background.png);
+	background-position: top right;
+	background-repeat: no-repeat;
+	border:2px;
+	border-bottom:2px solid #000;
+}
+#header p,
+#header h1,
+#header h2,
+#header img {
+	margin:5px 10px 20px 20px;
+	padding:0;
+}
+#header ul {
+	clear:left;
+	float:left;
+	width:100%;
+	list-style:none;
+	margin:10px 0 0 0;
+	padding:0;
+}
+#header ul li {
+	display:inline;
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+#header ul li a {
+	display:block;
+	float:left;
+	margin:0 0 0 1px;
+	padding:3px 10px;
+	text-align:center;
+	background:#eee;
+	color:#000;
+	text-decoration:none;
+	position:relative;
+	left:15px;
+	line-height:1.3em;
+}
+#header ul li a:hover {
+	background:#369;
+	color:#fff;
+}
+#header ul li a.active,
+#header ul li a.active:hover {
+	color:#fff;
+	background:#000;
+	font-weight:bold;
+}
+#header ul li a span {
+	display:block;
+}
+
+
+/* Login styles */
+#login a {
+	clear:both;
+	float:left;
+	width:100%;
+	background:white;
+	margin:0.2em 0em 0.2em -1em;
+	text-align:right;
+	font-size: 1.2em;
+	text-decoration:none; 
+	font-family: Arial, SunSans-Regular, Sans-Serif;
+	border-bottom:0px solid #000;
+	color:#00f;	
+	}
+
+#login a:hover {
+		color:#f00;
+		background:#fff;
+		text-decoration:none;
+		}
+
+
+/* 'widths' sub menu */
+#layoutdims {
+	clear:both;
+	background:#eee;
+	border-top:4px solid #000;
+	margin:0;
+	padding:6px 15px !important;
+	text-align:right;
+}
+/* column container */
+.colmask {
+	position:relative;	/* This fixes the IE7 overflow hidden bug */
+	clear:both;
+	float:left;
+	width:100%;			/* width of whole page */
+	overflow:hidden;		/* This chops off any overhanging divs */
+}
+/* common column settings */
+.colright,
+.colmid,
+.colleft {
+	float:left;
+	width:100%;
+	position:relative;
+}
+.col1,
+.col2,
+.col3 {
+	float:left;
+	position:relative;
+	padding:0 0 1em 0;
+	overflow:hidden;
+}
+/* 2 Column (left menu) settings */
+.leftmenu {
+	background:#fff;		/* right column background colour */
+}
+.leftmenu .colleft {
+	right:75%;			/* right column width */
+	background:#f4f4f4;	/* left column background colour */
+}
+.leftmenu ul{
+	list-style-type: none ;
+	padding: 0em 0em 0em 25px;
+	margin-bottom: 1em;
+	font-size: 1.2em;
+	font-family: Arial, SunSans-Regular, Sans-Serif;
+}
+
+.leftmenu a {
+	font-size: 1.2em;
+	padding: 0em 0em 0em 0px;
+	text-decoration:none; 
+	font-family: Arial, SunSans-Regular, Sans-Serif;
+}		
+.leftmenu .col1 {
+	width:71%;			/* right column content width */
+	left:102%;			/* 100% plus left column left padding */
+}
+
+.leftmenu .col1 a {
+	color:#00F;
+}
+
+.leftmenu .col1 a:hover {
+	color:#F00;
+}
+
+.leftmenu .col1 .bundle {
+  overflow: auto;
+  margin-top: 1em;
+  border-bottom: 1px dotted #77d;
+}
+
+.leftmenu .col1 table,td,th  {
+  font-family: Arial, SunSans-Regular, Sans-Serif;
+  font-size: 12px;
+  padding-right: 20px;
+}
+
+
+.leftmenu .col2 {
+	width:21%;			/* left column content width (column width minus left and right padding) */
+	left:6%;			/* (right column left and right padding) plus (left column left padding) */
+}
+
+
+.utunesNotice {
+	border:1px solid black;
+	background: #FFD16E;
+	padding:10px;
+	margin-bottom:10px;
+}
+
+.utunesError {
+	border:3px solid red;
+	background: #fff;
+	padding:10px;
+	margin-bottom:10px;
+}
+
+
+.utunes-form fieldset {
+  background: #efe;
+}
+
+.utunes-form legend {
+  color: #dfd;
+  background: #1a1;
+  font-family: sans-serif;
+  padding: 0.2em 1em;
+}
+
+.utunes-form label {
+  width: 8em;
+  float: left;
+  text-align: right;
+  padding-top: 0.2em;
+  margin-right: 0.1em;
+  display: block;
+}
+
+.utunes-form select, .utunes-form textarea, .utunes-form input {
+  margin-left: 0.5em;
+}
+
+.utunes-form select {
+  width: 70%;
+  margin-left: 0.5em;
+}
+
+.utunes-form .submit {
+  margin-left: 4em;
+}
+
+.utunes-form div {
+  margin: 0.5em 0;
+}
+
+.utunes-form a {
+	color:#00F;
+	text-decoration:none;
+}
+
+
+
+/* Footer styles */
+#footer {
+	text-align:center;
+	clear:both;
+	float:left;
+	width:100%;
+	border-top:1px solid #000;
+}
+#footer p {
+	padding:10px;
+	margin:0;
+}
+	
+	
+
+	
+/* --> */

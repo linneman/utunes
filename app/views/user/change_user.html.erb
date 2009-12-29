@@ -1,0 +1,27 @@
+<%if params[:info] %>
+	<div class="utunesNotice">
+		<%= params[:info] %>
+	</div>
+<% end %>
+
+<div class="utunes-form"> 
+
+  <% form_tag do %>
+    <fieldset>
+      <legend>Change User</legend>
+
+	  <img src=<%= url_for :controller=>"images/keys.png" %> border="0" ALIGN=RIGHT />
+
+      <div>
+        <label for="name">Name or email:</label>
+        <%= text_field_tag :name, params[:name] %>
+      </div>
+  
+      <div>
+        <%= submit_tag "Change to this user" %>
+      </div>
+    </fieldset>
+  <% end %>
+
+</div>
+

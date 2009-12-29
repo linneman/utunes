@@ -1,0 +1,37 @@
+<%if params[:info] %>
+	<div class="utunesNotice">
+		<%= params[:info] %>
+	</div>
+<% end %>
+
+<div class="utunes-form"> 
+
+  <% form_tag do %>
+    <fieldset>
+      <legend>Please Log In</legend>
+
+	  <img src=<%= url_for :controller=>"images/keys.png" %> border="0" ALIGN=RIGHT />
+
+	  <div> 
+		Don't have an account? <%= link_to "Create One", :controller=>"user", :action=>"register" %> <br />
+		You have you forgot your password? <%= link_to "Reactive Account", :controller=>"user", :action=>"forgot_password" %>
+	  </div>
+
+      <div>
+        <label for="name">Name or email:</label>
+        <%= text_field_tag :name, params[:name] %>
+      </div>
+
+      <div>
+        <label for="password">Password:</label>
+        <%= password_field_tag :password, params[:password] %>
+      </div>
+  
+      <div>
+        <%= submit_tag "Login" %>
+      </div>
+    </fieldset>
+  <% end %>
+
+</div>
+

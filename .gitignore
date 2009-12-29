@@ -1,0 +1,16 @@
+.DS_Store
+
+log/*.log
+tmp/**/*
+doc/api
+doc/app
+
+public/download
+public/upload
+
+lib/build_bundle/keys/*.pem
+paypal/*.pem
+
+config/mail_config.rb
+config/database.yml
+

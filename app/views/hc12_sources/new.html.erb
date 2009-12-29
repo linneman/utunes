@@ -1,0 +1,43 @@
+<h1>Creation of new HC12 CAN controller update archive</h1>
+<p>You can create an U-Connect upgrade archive for the HCS-12 CAN controller software here. Just upload the image files for the low speed and high speed CAN and enter the two digit version number without comma, spaces or any other separator.</p>
+
+<div class="utunes-form">
+	
+<% form_for :hc12_source, :url => { :action => "create" }, :html => { :multipart => true } do |f| %>
+  <%= f.error_messages %>
+
+  <fieldset>
+  <legend>Create new HC12 upgrade archive</legend>
+
+	<img src=<%= url_for :controller=>"images/hcs12.png" %> border="0" height="100px" ALIGN=RIGHT />
+
+  <div>
+	<label for="hc12_source_Version" style="width:15em;">Two Digit SW-Version</label>:
+    <%= f.text_field :version, :size => 2 %>
+  </div>
+
+  <div>
+	<label for="hc12_source_LS Image" style="width:15em;">Low Speed Image File</label>:
+	<%= f.file_field("upload_hc12_ls")%>
+  </div>
+
+  <div>
+	<label for="hc12_source_LS Image"  style="width:15em;">High Speed Image File</label>:
+	<%= f.file_field("upload_hc12_hs")%>
+  </div>
+
+  <div>
+	<%= f.submit "Create", :class => "submit" %>
+  </div>
+
+  </fieldset>
+
+<% end %>
+
+</div>
+
+<p>When you have upload your files you the software is creating an upgrade bundle which can be retrieve in the download bundle section.</p>
+
+<p>Have fun</p>
+
+<%= link_to 'Back', hc12_sources_path %>

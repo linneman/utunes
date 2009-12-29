@@ -1,0 +1,34 @@
+<h1>Upload new audio file</h1>
+<p>You can upload audio data you have recorded for the specific prompt to be selected out of the list of system prompts. The audio data have to come within MP3 format and should approximately match the original prompt length. </p>
+<div class="utunes-form">
+<% form_for( :audio_source, :url=>bundle_source_audio_sources_path(@bundle_source), :html=>{ :multipart => true, :method=>"post" } ) do |f| %>
+  <%= f.error_messages %>
+
+  <fieldset>
+  <legend>Audio file</legend>
+
+  <div>
+    <%= f.label "Choose prompt" %>:
+    <%= f.collection_select :file_id, @translations, :id, "shortform_"+@language %>
+  </div>
+
+  <img src=<%= url_for :controller=>"images/exquisite-microphone.png" %> border="0" height="100px" ALIGN=RIGHT />
+
+  <br/>
+  <div>
+	<%= f.label('MP3 File') %>:
+	<%= f.file_field("uploadfile")%> 
+  </div>
+  <br/>
+  <br/>
+  <div>
+	<%= f.label('')%>&nbsp
+    <%= f.submit "  Upload the file " %>
+  </div>
+  
+
+<% end %>
+</div>
+<p>After having clicked on the upload file button your audio data is submitted to the u-tunes website and its format is transcoded to the U-Connect's internal encoding format. This process can take a few seconds.<p>
+
+<%= link_to 'Back', bundle_source_audio_sources_path(@bundle_source)  %>

@@ -1,0 +1,46 @@
+<div class="utunes-form">
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+
+  <fieldset>
+  <legend>Enter User Details</legend>
+
+  <div>
+    <%= f.label :name %>:
+    <%= f.text_field :name, :size => 40 %>
+  </div>
+
+  <div>
+    <%= f.label :email %>:
+    <%= f.text_field :email, :size => 40 %>
+  </div>
+
+  <div>
+    <%= f.label :user_password, 'Password' %>:
+    <%= f.password_field :password, :size => 40 %>
+  </div>
+
+  <div>
+    <%= f.label :user_password_confirmation, 'Confirm' %>:
+    <%= f.password_field :password_confirmation, :size => 40 %>
+  </div>
+
+  <div>
+    <%= f.label :confirmed %>:
+	<%= check_box("user", "confirmed") %>
+  </div>
+
+  <div>
+    <%= f.label :level %>:
+    <%= f.select( :level, [['User', 0], ['Team Member', 1], ['Admin', 2]]  ) %>
+  </div>
+
+  <div>
+    <%= f.submit "Update", :class => "submit" %>
+  </div>
+
+  </fieldset>
+<% end %>
+
+</div>

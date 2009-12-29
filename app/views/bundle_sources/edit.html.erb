@@ -1,0 +1,7 @@
+<h1>Change Bundle Settings</h1>
+<p>On this page the common settings for all prompts files of a bundle can be changed. You can also add an illustrating image and select a sample voice prompt which both will be visible respectively audible within the download section of this site.</p>
+<%= render(:partial => "bundle_source", :locals=>{ :bundle_source=>@bundle_source, :buttontxt=>"Update", :language=>@language }) %>
+<p>For each bundle only one picture and one voice sample can be selected. After having specified the samples you will notice some additional text inside your bundle description. You can change the anchor position for the rendering in the download section just by moving it to another location within the description field.  You can also use html tags to format the text inside your  bundle description. </p>
+
+<%= link_to 'Show', @bundle_source %> |
+<%= link_to 'All bundle sources', bundle_sources_path %>

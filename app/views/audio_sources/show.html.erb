@@ -1,0 +1,15 @@
+<p>
+  <b>Bundle source:</b>
+  <%=h @audio_source.bundle_source_id %>
+</p>
+
+<p>
+  <b>File:</b>
+  <%=h @audio_source.file_id %>
+</p>
+
+
+
+
+<%= link_to 'Edit', edit_bundle_source_audio_source_path(@bundle_source, @audio_source) %> |
+<%= link_to 'Back', bundle_source_audio_sources_path(@bundle_source)  %>

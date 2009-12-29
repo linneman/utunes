@@ -1,0 +1,33 @@
+<h1>Change your password</h1>
+
+<br />
+<br />
+<br />
+
+
+<div class="utunes-form">
+
+<% form_for :user, :html => { :multipart => true } do |f| %>
+  <%= f.error_messages %>
+
+  <fieldset>
+  <legend>Enter new password twice</legend>
+
+  <div>
+    <%= f.label :user_password, 'Password' %>:
+    <%= f.password_field :password, :size => 40 %>
+  </div>
+
+  <div>
+    <%= f.label :user_password_confirmation, 'Confirm' %>:
+    <%= f.password_field :password_confirmation, :size => 40 %>
+  </div>
+
+  <div>
+    <%= f.submit "Change Password", :class => "submit" %>
+  </div>
+
+  </fieldset>
+<% end %>
+
+</div>

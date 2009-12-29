@@ -1,0 +1,20 @@
+<h1>Uploaded audio prompts for bundle <%=h @bundle_source.title %></h1>
+<p>Here you see the list of all the bundles you have uploaded to the U-Connect website so far. You can add another audio prompt file or delete and existing one. You can also replace the audio data by clicking on the change button</p>
+<table  border="2" rules="rows"  width="100%">
+<tbody>	
+<% for audio_source in @audio_sources %>
+  <tr>
+    <td><%= audio_source.translation(@bundle_source.language) %></td>
+    <td><%= mp3url(audio_source) %> </td>
+	<td><%= link_to 'Change', edit_bundle_source_audio_source_path(@bundle_source, audio_source) %></td>
+    <td><%= link_to 'Delete', bundle_source_audio_source_path(@bundle_source, audio_source), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'New audio file', new_bundle_source_audio_source_path(@bundle_source) %>  |
+<%= link_to 'Bundle source description', bundle_source_path(@bundle_source) %>  |
+<%= link_to 'All bundles sources', bundle_sources_path %>

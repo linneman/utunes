@@ -1,0 +1,2 @@
+module Hc12SourcesHelper
+end

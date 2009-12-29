@@ -1,0 +1,52 @@
+<div class="utunes-form">
+
+<% form_for(bundle_source, :html=>{ :multipart => true}) do |f| %>
+  <%= f.error_messages %>
+
+  <fieldset>
+  <legend>Enter Bundle Details</legend>
+	
+  <img src=<%= url_for :controller=>"images/exquisite-folder_music_right.png" %> border="0" height="100px" ALIGN=RIGHT />
+
+  <div>
+	<% if buttontxt=="Create" %>
+	    <%= f.label :title, "Title:" %> &nbsp
+	    <%= f.text_field :title, :size => 60  %>
+	<% else %>
+	    <%= f.label :title %>:
+	    <%=h bundle_source.title %>
+	<% end %>
+  </div>
+
+  <div>
+    <%= f.label :description, "Description:" %> &nbsp
+    <%= f.text_area :description, :cols => 58, :rows => 10  %>
+  </div>	
+
+  <div>
+    <%= f.label :language, "Language:" %> &nbsp
+    <%= f.select( :language, [['English', 'ENG'], ['French', 'FRF'], ['Spanish', 'SPE'],   ['Italien', 'ITI'], ['Dutch', 'DUN'], ['German', 'GED']] ) %>
+  </div>
+
+  <div>
+	<%= f.label :icon, "Picture:"%> &nbsp
+	<%= f.file_field("uploadicon")%>
+  </div>
+  <% if @sample_prompt_selection%>
+	  <div>	
+	    <%= f.label "Sample tone:" %>&nbsp
+	    <%= f.collection_select :sample_file_id, @sample_prompt_selection, :id, @language %>
+	  </div>
+  <% end %>
+
+  <div>
+	<%= f.label :public, "Public:" %> &nbsp
+	<%= f.check_box :public %>
+  </div>
+  <div>
+    <%= f.submit buttontxt %>
+  </div>
+<% end %>
+
+
+</div>

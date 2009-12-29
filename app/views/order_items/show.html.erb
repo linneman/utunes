@@ -1,0 +1,18 @@
+<p>
+  <b>Bundle:</b>
+  <%=h @order_item.bundle_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @order_item.user_id %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%=h @order_item.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_order_item_path(@order_item) %> |
+<%= link_to 'Back', order_items_path %>

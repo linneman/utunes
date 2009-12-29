@@ -1,0 +1,8 @@
+<h1>Enter Settings for New Bundle</h1>
+<p>You can create your own set of audio prompts which are bundled to a single update file by the software behind this website and for this reason named bundle. All voice prompts you are about to exchange are referred to a specific language which can be selected below.</p>
+
+<%= render(:partial => "bundle_source", :locals=>{ :bundle_source=>@bundle_source, :buttontxt=>"Create", :language=>@language }) %>
+<p>Furthermore you can integrate an additional description, an illustrating picture and after having uploaded some audio data you can also select a sample prompt which will be provided within the download section of this side. </p>
+<p>If you want to share your data within the u-tunes community you should select the public-box. Otherwise the bundle will not presented other users and will stay private.</p>
+<p>All parameters can be changed later on. If you want to see information about bundles you have already created just click the button below.</p>
+<%= link_to 'All bundle sources', bundle_sources_path %>

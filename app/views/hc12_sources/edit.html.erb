@@ -1,0 +1,31 @@
+<h1>Upload New HC12 Image Files</h1>
+
+<div class="utunes-form">
+	
+<% form_for :hc12_source, :url => { :action => "update" }, :html => { :multipart => true, :class=>"edit_hc12_source", :id => "edit_hc12_source_"+@hc12_source.id.to_s, :method=>"put" }   do |f| %>
+
+  <fieldset>
+  <legend>Upload new HC12 Image Files</legend>
+
+  <div>
+	<label for="hc12_source_LS Image" style="width:15em;">Low Speed Image File</label>:
+	<%= f.file_field("upload_hc12_ls")%>
+  </div>
+
+  <div>
+	<label for="hc12_source_LS Image"  style="width:15em;">High Speed Image File</label>:
+	<%= f.file_field("upload_hc12_hs")%>
+  </div>
+
+  <div>
+	<%= f.submit "Create", :class => "submit" %>
+  </div>
+
+  </fieldset>
+
+<% end %>
+
+</div>
+
+<%= link_to 'Show', @hc12_source %> |
+<%= link_to 'Back', hc12_sources_path %>

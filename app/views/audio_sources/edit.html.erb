@@ -1,0 +1,21 @@
+<h1>Change audio file</h1>
+
+<% form_for( :audio_source, :url=>bundle_source_audio_source_path(@bundle_source, @audio_source), :html=>{ :multipart => true, :method=>"put" }) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label "U-Connect utterance" %>:<br />
+    <%= @audio_source.translation(@bundle_source.language) %>
+  </p>
+  <p>
+	<%= f.label('MP3 File') %>:
+	<%= f.file_field("uploadfile")%>
+  </p>
+  <p>
+    <%= f.submit "Upload" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back to audio files', bundle_source_audio_sources_path(@bundle_source) %>
+
+
+

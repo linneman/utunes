@@ -1,0 +1,22 @@
+<%= render(:partial => "bundle", :locals=>{ :bundle=>@bundle, :render_show_link=>false } ) %>
+
+
+<% for bundle_comment in @bundle.bundle_comments %>
+
+    <h3>Comment from <%=h User.find_by_id( bundle_comment.user_id ).name %></h3>
+	<p><%=h bundle_comment.comment %></p>
+	<% if @admin_authorized %>
+		<table> <tr>
+	    <th><%= link_to 'Show', bundle_bundle_comment_path(@bundle, bundle_comment) %> </th>
+	    <th><%= link_to 'Edit', edit_bundle_bundle_comment_path(@bundle, bundle_comment) %> </th>
+	    <th> <%= link_to 'Destroy', bundle_bundle_comment_path(@bundle, bundle_comment), :confirm => 'Are you sure?', :method => :delete %> </th>
+		</tr> </table>
+	<% end %>
+	<hr>
+	
+
+<% end %>
+
+<%= link_to 'Add new comment', new_bundle_bundle_comment_path(@bundle) %> | 
+<%= link_to 'Back', bundles_path %>
+

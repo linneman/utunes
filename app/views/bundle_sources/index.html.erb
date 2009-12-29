@@ -1,0 +1,40 @@
+<h1>Your Bundles</h1>
+<p> Here is a list with all the bundles you have created so far. You can change the corresponding audio data by clicking the item &quot;audio files&quot; within the corresponding table row. You can also create new bundles by clicking the button below the table.</p>
+<table border="1" rules="groups" width="100%">
+  <thead>
+  <tr>
+	<% if @admin_authorized %>
+    	<th>User</th>
+	<% end %>
+	<th>Title</th>
+    <th>Language</th>
+   	<th>Public</th>
+    <th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+  </tr>
+  </thead>
+
+<tbody>
+<% for bundle_source in @bundle_sources %>
+  <tr>
+	<% if @admin_authorized %>
+    	<td valign="baseline"><%=h User.find_by_id( bundle_source.user_id ).name %></td>
+	<% end %>
+	<td valign="baseline" align="center"><%=h bundle_source.title %></td>
+	<td valign="baseline" align="center"><%=h bundle_source.language_name %></td>
+    <td valign="baseline" align="center"><%= if bundle_source.public then "yes" else "no" end %></td>
+	<td valign="baseline"><%= link_to 'Audio Files', bundle_source_audio_sources_path(bundle_source) %></td>
+    <td valign="baseline"><%= link_to 'Show', bundle_source %></td>
+    <td valign="baseline"><%= link_to 'Edit', edit_bundle_source_path(bundle_source) %></td>
+    <td valign="baseline"><%= link_to 'Delete', bundle_source, :confirm => 'Are you sure?', :method => :delete %></td>
+	<td valign="baseline"><%= button_to 'publish this bundle', publish_bundle_source_path(bundle_source), :method => :put %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+<br />
+
+<%= link_to 'New bundle source', new_bundle_source_path %> 

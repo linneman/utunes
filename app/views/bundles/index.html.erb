@@ -1,0 +1,9 @@
+<h1 align="center">List of Bundles</h1>
+<hr>
+<%= render(:partial => "bundle", :collection => @bundles, :locals=>{ :bundle=>@bundle, :render_show_link=>true }) %>
+<br /> <br />
+<hr/>
+<%= will_paginate @bundles %>
+<hr/>
+
+

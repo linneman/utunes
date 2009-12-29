@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  bundle_source_id: 1
+  file_id: 1
+  ENU: false
+  SPM: false
+  FRC: false
+  GED: false
+  ENG: false
+  FRF: false
+  ITI: false
+  SPE: false
+  DUN: false
+
+two:
+  bundle_source_id: 1
+  file_id: 1
+  ENU: false
+  SPM: false
+  FRC: false
+  GED: false
+  ENG: false
+  FRF: false
+  ITI: false
+  SPE: false
+  DUN: false

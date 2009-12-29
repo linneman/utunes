@@ -1,0 +1,24 @@
+<h1>Comments</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Bundle</th>
+    <th>Comment</th>
+  </tr>
+
+<% for bundle_comment in @bundle_comments %>
+  <tr>
+    <td><%=h User.find_by_id( bundle_comment.user_id ).name %></td>
+    <td><%=h Bundle.find_by_id( bundle_comment.bundle_id ).title %></td>
+    <td><%=h bundle_comment.comment %></td>
+    <td><%= link_to 'Show', bundle_bundle_comment_path(@bundle, bundle_comment) %></td>
+    <td><%= link_to 'Edit', edit_bundle_bundle_comment_path(@bundle, bundle_comment) %></td>
+    <td><%= link_to 'Destroy', bundle_bundle_comment_path(@bundle, bundle_comment), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New bundle_comment', new_bundle_bundle_comment_path(@bundle) %>

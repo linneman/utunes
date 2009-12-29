@@ -1,0 +1,48 @@
+<h1> User Registertration</h1>
+
+<br />
+<br />
+<br />
+
+
+<div class="utunes-form">
+
+<% form_for :user, :html => { :multipart => true } do |f| %>
+  <%= f.error_messages %>
+
+  <fieldset>
+  <legend>Enter User Details</legend>
+
+  <div>
+    <%= f.label :name %>:
+    <%= f.text_field :name, :size => 40 %>
+  </div>
+
+  <div>
+    <%= f.label :email %>:
+    <%= f.text_field :email, :size => 40 %>
+  </div>
+
+  <div>
+    <%= f.label :user_password, 'Password' %>:
+    <%= f.password_field :password, :size => 40 %>
+  </div>
+
+  <div>
+    <%= f.label :user_password_confirmation, 'Confirm' %>:
+    <%= f.password_field :password_confirmation, :size => 40 %>
+  </div>
+
+  <div>
+	<%= f.label("Version File") %>:
+	<%= f.file_field("upload_licence_file")%>
+  </div>
+
+  <div>
+    <%= f.submit "Register User", :class => "submit" %>
+  </div>
+
+  </fieldset>
+<% end %>
+
+</div>

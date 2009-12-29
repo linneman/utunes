@@ -1,0 +1,106 @@
+<div class="bundle">
+<h2> <%=h bundle.title %> </h2>
+<h3> created by: <%= User.find_by_id(bundle.created_by_user_id).name %></h3>
+<%= filter_content( bundle.description )  %>
+
+
+<h4>Supported Country Codes and Languages</h3>
+<table>
+  <tr>
+	<% if bundle.ENU %>
+	 	<th><img src=<%= url_for :controller=>"images/enu.png" %>  width=60px border="0"  /></th>
+	<% end %> 
+
+	<% if bundle.FRC %>
+	 	<th><img src=<%= url_for :controller=>"images/frc.png" %>  width=60px border="0"  /></th>
+	<% end %>
+
+	<% if bundle.SPM %>
+	 	<th><img src=<%= url_for :controller=>"images/spm.png" %>  width=60px border="0"  /></th>
+	<% end %>
+
+	<% if bundle.ENG %>
+	 	<th><img src=<%= url_for :controller=>"images/eng.png" %>  width=60px border="0"  /></th>
+	<% end %> 
+
+	<% if bundle.FRF %>
+	 	<th><img src=<%= url_for :controller=>"images/frf.png" %>  width=60px border="0"  /></th>
+	<% end %>
+
+	<% if bundle.SPE %>
+	 	<th><img src=<%= url_for :controller=>"images/spe.png" %>  width=60px border="0"  /></th>
+	<% end %>
+
+	<% if bundle.ITI %>
+	 	<th><img src=<%= url_for :controller=>"images/iti.png" %>  width=60px border="0"  /></th>
+	<% end %>
+
+	<% if bundle.DUN %>
+	 	<th><img src=<%= url_for :controller=>"images/dun.png" %>  width=60px border="0"  /></th>
+	<% end %>
+
+	<% if bundle.GED %>
+	 	<th><img src=<%= url_for :controller=>"images/ged.png" %>  width=60px border="0"  /></th>
+	<% end %> 
+  </tr>
+
+  <tr>
+	<% if bundle.ENU %>
+	 	<th>English (USA)</th>
+	<% end %> 
+
+	<% if bundle.FRC %>
+	 	<th>French (Canada)</th>
+	<% end %>
+
+	<% if bundle.SPM %>
+	 	<th>Spanish (Mexico)</th>
+	<% end %>
+
+	<% if bundle.ENG %>
+	 	<th>English (GB)</th>
+	<% end %> 
+
+	<% if bundle.FRF %>
+	 	<th>French (France)</th>
+	<% end %>
+
+	<% if bundle.SPE %>
+	 	<th>Spanish (Spain)</th>
+	<% end %>
+
+	<% if bundle.ITI %>
+	 	<th>Italien</th>
+	<% end %>
+
+	<% if bundle.DUN %>
+	 	<th>Dutch</th>
+	<% end %>
+
+	<% if bundle.GED %>
+	 	<th>German</th>
+	<% end %>
+  </tr>
+
+</table>
+
+
+
+<% if bundle.price > 0.1 %>
+	<h3> Price: <%= bundle.price.to_s + ' ' + bundle.currency_code %> </h3> 
+<% end %>
+	
+<p><%= generate_encrypted_buy_button( bundle ) %></p>
+<br />
+
+<table> <tr>
+<% if render_show_link %>
+<td><%= link_to 'Show User Comments', bundle %></td>
+<% end %>
+<% if @admin_authorized %>
+	<td><%= link_to 'Edit', edit_bundle_path(bundle) %></td>
+	<td><%= link_to 'Destroy', bundle, :confirm => 'Are you sure?', :method => :delete %></td>
+<% end %>
+</tr> </table>
+
+</div>

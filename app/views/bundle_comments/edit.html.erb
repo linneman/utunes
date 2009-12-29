@@ -1,0 +1,23 @@
+<h1>Editing bundle_comment</h1>
+
+<% form_for( :bundle_comment, :url => bundle_bundle_comment_path(@bundle, @bundle_comment), :html=>{ :method=> :put } ) do |f| %>
+  <%= f.error_messages %>
+
+
+  <p>
+	User: <%= User.find_by_id( @bundle_comment.user_id ).name %>
+  </p>
+  <p>
+	Bundle: <%= Bundle.find_by_id( @bundle_comment.bundle_id ).title %>
+  </p>
+  <p>
+    <%= f.label :comment %><br />
+    <%= f.text_area :comment %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', bundle_bundle_comment_path( @bundle, @bundle_comment) %> |
+<%= link_to 'Back', bundle_path(@bundle) %>

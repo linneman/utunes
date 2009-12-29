@@ -1,0 +1,28 @@
+<div class="bundle">
+<h2> Title: 
+  <%=h @bundle_source.title %>
+</h2>
+<hr />
+
+<p><b>Description:</b></p>
+<p><%= filter_content( @bundle_source.description ) %></p>
+
+<hr />
+<p>
+  <b>Language:</b>
+  <%=h @bundle_source.language_name %>
+</p>
+
+<p>
+  <b>Public:</b>
+  <%= if @bundle_source.public then "yes" else "no" end %>
+</p>
+
+</div>
+<%= link_to 'Edit', edit_bundle_source_path(@bundle_source) %> |
+<%= link_to 'Add Audio Files', new_bundle_source_audio_source_path(@bundle_source) %> |
+<%= link_to 'All bundle sources', bundle_sources_path %> <br /> <br />
+
+<% if @bundle_source.audio_sources.length > 0 %>
+<%= button_to 'Publish this bundle', publish_bundle_source_path(@bundle_source), :method => :put %>
+<% end %>
