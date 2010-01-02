@@ -14,7 +14,8 @@ config.action_view.debug_rjs                         = true
 config.action_controller.perform_caching             = false
 
 # for passenger, 2008-01-03, OL
-config.action_controller.relative_url_root = "/utunes"
+# config.action_controller.relative_url_root = "/utunes"
+
 
 # Don't care if the mailer can't send
 # config.action_mailer.raise_delivery_errors = false

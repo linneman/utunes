@@ -112,7 +112,7 @@ private
 		target_dir  = "public/download/#{order_item.url}"
 		target_file = "#{target_dir}/uconnect.upd"
  
-		gen_script_dir = 'lib/build_bundle/build_'+bundle.title.gsub(/\s/, "_" ).downcase
+		gen_script_dir = 'lib/bundles/build_'+bundle.title.gsub(/\s/, "_" ).downcase
 		gen_script = 'build_main.sh'
 
 

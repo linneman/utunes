@@ -44,6 +44,7 @@ module BundlesHelper
 		else # user is not logged in
 			# link_to "register", :controller=>"user", :action=>"register"
 			session[:original_uri] = request.request_uri
+			logger.info("-------> request.request_uri: " + request.request_uri.to_s )
 			if bundle.price < 0.1
 				link_to image_tag( "download.gif", :border=>"0" ), :controller=>"user", :action=>"login", :info=>"You have to login or register first"
 		else

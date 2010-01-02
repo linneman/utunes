@@ -169,8 +169,8 @@ class BundleSourcesController < ApplicationController
     
     # create bundle script generator
     
-    template_script_dir = 'lib/build_bundle/templates/build_voicebundle'
-    gen_script_dir      = 'lib/build_bundle/build_'+bundle_source.title.gsub(/\s/, "_" ).downcase
+    template_script_dir = 'lib/bundle_templates/build_voicebundle'
+    gen_script_dir      = 'lib/bundles/build_'+bundle_source.title.gsub(/\s/, "_" ).downcase
     
     %x[rm -R #{gen_script_dir}]
     %x[cp -R #{template_script_dir} #{gen_script_dir}]

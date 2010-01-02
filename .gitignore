@@ -8,7 +8,7 @@ doc/app
 public/download
 public/upload
 
-lib/build_bundle/keys/*.pem
+lib/bundles/**/*
 paypal/*.pem
 
 config/mail_config.rb

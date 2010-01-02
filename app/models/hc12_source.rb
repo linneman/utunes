@@ -39,7 +39,7 @@ class Hc12Source < ActiveRecord::Base
     #
     # copy template folder
     #
-    bundle_folder = "lib/build_bundle"
+    bundle_folder = "lib/bundles"
     bundle_name="build_" + bundle_title
     bundle_fq_name = bundle_folder + "/" + bundle_name
     
@@ -91,10 +91,7 @@ class Hc12Source < ActiveRecord::Base
     version_str = sprintf("%.2d", version )
     bundle_title = "hc12_v#{version_str}"
        
-    #
-    # copy template folder
-    #    
-    bundle_folder = "lib/build_bundle"
+    bundle_folder = "lib/bundles"
     bundle_name="build_" + bundle_title
     bundle_fq_name = bundle_folder + "/" + bundle_name
         
@@ -102,10 +99,6 @@ class Hc12Source < ActiveRecord::Base
     logger.info( %x[rm -R #{bundle_fq_name}] )
         
   end
-  
-  
-  
-  
   
   
   def upload_hc12_ls=(file)
