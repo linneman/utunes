@@ -44,5 +44,18 @@ task :configure_database, :roles => :app do
   run "cp #{db_config} #{release_path}/config/database.yml"
   run "cp #{mail_config} #{release_path}/config/mail_config.rb"
   
+  run "rm -R -f #{release_path}/public/upload"
+  run "ln -s #{deploy_to}/upload #{release_path}/public/upload"
+
+  run "rm -R -f #{release_path}/public/download"
+  run "ln -s #{deploy_to}/download #{release_path}/public/download"
+
+  run "rm -R -f #{release_path}/lib/bundles"
+  run "ln -s #{deploy_to}/bundles #{release_path}/lib/bundles"
+
+  run "rm -R -f #{release_path}/paypal"
+  run "ln -s #{deploy_to}/paypal #{release_path}/paypal"
+  
+  run "touch #{release_path}/tmp/restart.txt"
 end
 
