@@ -4,6 +4,8 @@ class OrderItemController < ApplicationController
   require 'crypto42'
   require 'money'
 	require 'ecuparser.rb'
+	require 'FileUtils'
+  include FileUtils
 
   # temporary required for paypal test tool which is not authentificated
   skip_before_filter :verify_authenticity_token
@@ -120,7 +122,7 @@ private
 		bash_cmd << "cd #{gen_script_dir}; "
 		bash_cmd << "./#{gen_script} #{sw_version_minor} #{sw_version_major} #{serial_nr}; "
 		bash_cmd << "./sign_archive.sh; "
-		bash_cmd << "mv command.tar ../../../#{target_file}" 
+		# bash_cmd << "mv command.tar ../../../#{target_file}" 
 
  
 		# create temporary file
@@ -135,6 +137,7 @@ private
     result=pipe.read
 
 		logger.info(result)
+		cp( gen_script_dir+"/command.tar", target_file )
 	end
 	
 
