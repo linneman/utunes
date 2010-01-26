@@ -4,7 +4,7 @@ class OrderItemController < ApplicationController
   require 'crypto42'
   require 'money'
 	require 'ecuparser.rb'
-	require 'FileUtils'
+	require 'fileutils'
   include FileUtils
 
   # temporary required for paypal test tool which is not authentificated
