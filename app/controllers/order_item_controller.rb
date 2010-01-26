@@ -143,9 +143,9 @@ private
 
 	# reference to the actual file resouce
 	def generate_download_ref( hashkey )
-  	# %Q|<a href="/download/#{hashkey}/uconnect.upd" type="application/binary">Click here to download your update file</a><br>|
+  	# %Q|<a href="/download/#{hashkey}/uconnect.upd" type="application/octet-stream">Click here to download your update file</a><br>|
 
-  	'<a href="' + url_for(:controller=>"download", :action=>"#{hashkey}", :id=>"uconnect.upd") + %Q|" type="application/binary">Click here to download your update file</a><br>|
+  	'<a href="' + url_for(:controller=>"download", :action=>"#{hashkey}", :id=>"uconnect.upd") + %Q|" type="application/octet-stream">Click here to download your update file</a><br>|
 	end
 
 
